@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useGetAllFoodsQuery } from '../store/food/api'
 import '../style/home.css'
 import { addToCart } from '../store/cart/slice'

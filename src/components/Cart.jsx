@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { ArrowLeft } from 'react-bootstrap-icons'
 import '../style/cart.css'
-import { removeCart, addToCart, decreaseItemCart, clearCart, getTotals } from '../store/cart/slice'
+import {
+  removeCart,
+  addToCart,
+  decreaseItemCart,
+  clearCart,
+  getTotals,
+  checkOut,
+} from '../store/cart/slice'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.carts.cartItems)
@@ -30,11 +38,22 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart())
   }
+  const navigate = useNavigate()
+  const handlerCheckOut = () => {
+    console.log('clicked')
+    if (window.confirm('Thank You Very Much!')) {
+      dispatch(checkOut())
+      navigate('/')
+    }
+    // alert('Thank You Very Much!')
+    // handleClearCart()
+    // navigate('/')
+  }
 
   return (
     <div className="cart-container">
       <div>
-        <h2>Shopping Cart</h2>
+        <h2>Your Order</h2>
       </div>
       {cartItems.length === 0 ? (
         <div className="cart-empty">
@@ -42,7 +61,7 @@ const Cart = () => {
           <div className="start-shopping">
             <Link to={'/'}>
               <ArrowLeft />
-              <span>Start Shopping</span>
+              <span>Order Start</span>
             </Link>
           </div>
         </div>
@@ -93,11 +112,11 @@ const Cart = () => {
                 <span className="amount">{cartTotalAmount}¥</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Check out</button>
+              <button onClick={() => handlerCheckOut()}>Check out</button>
               <div className="continue-shopping">
                 <Link to={'/'}>
                   <ArrowLeft />
-                  <span>Continue Shopping</span>
+                  <span>Keep Ordering</span>
                 </Link>
               </div>
             </div>
