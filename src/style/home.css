@@ -1,0 +1,43 @@
+.loading {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading h1 {
+  position: relative;
+  color: #333;
+  font-size: 4em;
+  letter-spacing: 5px;
+  border-bottom: 10px solid #333;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-family: consolas;
+}
+
+.loading h1::before {
+  display: block;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: dodgerblue;
+  border-bottom: 10px solid dodgerblue;
+  animation: lod 2s linear infinite;
+  overflow: hidden;
+}
+
+@keyframes lod {
+  0% {
+    width: 0;
+  }
+  /* 50% {
+    width: 50%;
+  } */
+  100% {
+    width: 100%;
+  }
+}
