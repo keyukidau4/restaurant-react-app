@@ -16,7 +16,7 @@ const NavBar = () => {
   return (
     <nav className="nav-bar">
       <Link to="/">
-        <h2>Online Restaurant</h2>
+        <h2>Online Res</h2>
       </Link>
       <Link to={'/cart'}>
         <div className="nav-bag">
