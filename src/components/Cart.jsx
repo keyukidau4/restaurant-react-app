@@ -40,14 +40,10 @@ const Cart = () => {
   }
   const navigate = useNavigate()
   const handlerCheckOut = () => {
-    console.log('clicked')
     if (window.confirm('Thank You Very Much!')) {
       dispatch(checkOut())
       navigate('/')
     }
-    // alert('Thank You Very Much!')
-    // handleClearCart()
-    // navigate('/')
   }
 
   return (

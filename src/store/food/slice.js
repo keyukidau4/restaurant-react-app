@@ -11,7 +11,7 @@ export const foodFetch = createAsyncThunk(
   'foods/foodFetch',
   async (id = null, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:8000/products')
+      const response = await axios.get('https://vnrestaurant-api.vercel.app/products')
 
       return response?.data
     } catch (error) {
@@ -25,9 +25,7 @@ const foodSlice = createSlice({
   initialState,
   reducers: {
     addFood: (state, action) => {
-      console.log('addFood')
       state.foods = [...state.foods, action.payload]
-      console.log(state.foods)
     },
     removeFood: (state, action) => {
       state.foods = state.foods.filter((food) => food.id !== action.payload.id)

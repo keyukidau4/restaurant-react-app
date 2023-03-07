@@ -9,11 +9,11 @@ import FOODS from '../database/data'
 const Home = () => {
   const { data: datas, error, isLoading } = useGetAllFoodsQuery()
 
-  const [foodData, setFoodData] = useState()
+  // const [foodData, setFoodData] = useState()
 
-  useEffect(() => {
-    datas ? setFoodData(datas) : setFoodData(FOODS)
-  }, [foodData, datas])
+  // useEffect(() => {
+  //   datas ? setFoodData(datas) : setFoodData(FOODS)
+  // }, [foodData, datas])
 
   const dispatch = useDispatch()
 
@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div style={{ marginBlock: '20px' }}>
       <ul className="listItem">
-        {foodData?.map((data, index) => (
+        {datas?.map((data, index) => (
           <li key={index}>
             <img src={data.image} alt={data.name} width={300} height={280} />
             <div className="content">

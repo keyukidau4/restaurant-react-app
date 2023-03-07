@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const foodsApi = createApi({
   reducerPath: 'foodsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://vnrestaurant-api.vercel.app/' }),
   endpoints: (builder) => ({
     getAllFoods: builder.query({
       query: () => 'products',
