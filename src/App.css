@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Mulish:wght@200;300;400;500;600;700;800&family=Parisienne&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -18,7 +18,7 @@
 }
 
 :root {
-  font-family: 'Parisienne', cursive;
+  font-family: 'Mulish', sans-serif;
 }
 
 .nav-bar {
